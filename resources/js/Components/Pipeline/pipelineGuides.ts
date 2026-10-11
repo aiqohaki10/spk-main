@@ -1,4 +1,4 @@
-export type PipelineGuidePhaseKey = 'setup' | 'scoring' | 'bwm' | 'edas' | 'tieBreaking' | 'result';
+export type PipelineGuidePhaseKey = 'setup' | 'scoring' | 'bwm' | 'edas' | 'tieBreaking' | 'copeland' | 'result';
 
 export interface PipelineGuideContentSection {
     title: string;
@@ -235,6 +235,20 @@ export const PIPELINE_GUIDES: Record<PipelineGuidePhaseKey, PipelineGuideEntry> 
                         'Gunakan ranking final sebagai rekomendasi utama, bukan pengganti verifikasi administratif.',
                         'Jika hasil terasa tidak sesuai intuisi, periksa data peserta dan bobot BWM lebih dulu sebelum mengubah keputusan.',
                         'Saat kriteria atau peserta berubah, jalankan ulang tahap yang relevan agar hasil tetap valid.',
+                    ],
+                },
+            ],
+        },
+    },
+    copeland: {
+        title: 'Panduan Copeland',
+        content: {
+            summary: 'Tahap pemeringkatan perbandingan berpasangan (pairwise comparison).',
+            sections: [
+                {
+                    title: 'Deskripsi',
+                    items: [
+                        'Sistem membandingkan skor alternatif secara berpasangan.',
                     ],
                 },
             ],

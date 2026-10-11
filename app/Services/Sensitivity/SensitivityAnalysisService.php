@@ -111,8 +111,8 @@ class SensitivityAnalysisService
                     'scenario_rank' => $rank,
                     'baseline_rank' => $baselineRankMap[$pId]['rank'] ?? $rank,
                     'diff' => ($baselineRankMap[$pId]['rank'] ?? $rank) - $rank,
-                    'copeland_score' => $row['copeland_score'],
-                    'edas_score' => $row['edas_score'],
+                    'copeland_score' => $row['copeland_score'] ?? 0,
+                    'edas_score' => $row['edas_score'] ?? ($row['score'] ?? 0),
                 ];
 
                 if ($rank === 1 && $scenarioTop1Id === null) {

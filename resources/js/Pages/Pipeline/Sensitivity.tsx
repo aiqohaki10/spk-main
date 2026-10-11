@@ -380,7 +380,7 @@ export default function Sensitivity({ period, pipelineState, analysis }: Props) 
                                         <th className="py-2.5 px-3 text-center">Rank Awal</th>
                                         <th className="py-2.5 px-3 text-center">Rank Skenario</th>
                                         <th className="py-2.5 px-3 text-center">Perubahan (Δ)</th>
-                                        <th className="py-2.5 px-3 text-right">Skor Copeland</th>
+                                        <th className="py-2.5 px-3 text-right">Skor EDAS</th>
                                     </tr>
                                 </thead>
                                 <tbody className="divide-y divide-slate-100 bg-white">
@@ -411,7 +411,7 @@ export default function Sensitivity({ period, pipelineState, analysis }: Props) 
                                                     )}
                                                 </td>
                                                 <td className="py-2.5 px-3 text-right font-mono font-semibold text-slate-700">
-                                                    {row.copeland_score > 0 ? `+${row.copeland_score}` : row.copeland_score}
+                                                    {Number(row.edas_score ?? row.copeland_score ?? 0).toFixed(4)}
                                                 </td>
                                             </tr>
                                         ))}
